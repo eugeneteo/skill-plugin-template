@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Install the {{PLUGIN_NAME}} skills into a flat-namespace skills directory.
 #
-# Claude Code and Copilot CLI plugin installs need no script — install
+# Claude Code and GitHub Copilot CLI plugin installs need no script — install
 # the .claude-plugin/ manifest instead and skills are namespaced
 # (/{{PLUGIN_NAME}}:search). This script is for hosts without a plugin
-# concept (Codex, Antigravity, Gemini CLI, manual Copilot CLI installs),
+# concept (Codex, Antigravity, Gemini CLI).
 # where each skill is known by its folder name and a generic name like
 # "search" can collide with other installed skills.
 #
@@ -16,7 +16,7 @@
 #   ./install.sh <target-skills-dir> [--force]
 #
 # Examples:
-#   ./install.sh ~/.agents/skills                # Codex / Copilot CLI
+#   ./install.sh ~/.agents/skills                # Codex
 #   ./install.sh ~/.gemini/config/skills         # Antigravity / Gemini CLI
 #
 # Re-running refreshes existing installs only with --force.

@@ -50,7 +50,7 @@ prefixing each with the plugin name so generic skill names cannot
 collide with other installed skills:
 
 ```bash
-./install.sh ~/.agents/skills                  # Codex / Copilot CLI
+./install.sh ~/.agents/skills                  # Codex
 ./install.sh ~/.gemini/config/skills           # Antigravity / Gemini CLI
 ./install.sh ~/.agents/skills --force          # refresh existing installs
 ```
@@ -87,13 +87,15 @@ claude plugin install {{PLUGIN_NAME}}@{{REPO_NAME}}
 
 ### GitHub Copilot CLI
 
-Clone the repository. The `.github/copilot-instructions.md` file gives
-Copilot CLI the plugin context, and Copilot reads the skills under
-`skills/` as reference material:
+Copilot CLI supports plugin marketplaces natively:
 
 ```bash
-git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
+copilot plugin marketplace add {{GITHUB_OWNER}}/{{REPO_NAME}}
+copilot plugin install {{PLUGIN_NAME}}@{{REPO_NAME}}
 ```
+
+When working from a clone, `.github/copilot-instructions.md` gives
+Copilot CLI the plugin context.
 
 ### Codex
 

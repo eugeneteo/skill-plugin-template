@@ -17,7 +17,7 @@ from it:
    - `{{ONE_PARAGRAPH_OVERVIEW}}`, `{{ONE_SENTENCE_PLUGIN_DESCRIPTION}}`,
      `{{ONE_SENTENCE_MARKETPLACE_DESCRIPTION}}`, `{{WHAT_THIS_SKILL_COVERS}}`,
      `{{TRIGGER_CONDITIONS}}`, `{{OTHER_TRIGGER}}` — descriptive text
-3. Drop skills into `skills/`.
+3. Add your skills to the `skills/` directory.
 
 `claude plugin validate .` warns about the `{{…}}` placeholders until you
 replace them — that is expected.
@@ -119,7 +119,7 @@ Bump both files on every release.
 
 ## License
 
-This template is licensed under [GPL-3.0](LICENSE). If you build a
-plugin or skill repository from this template and make it public, you
-must license that repository under GPL-3.0 as well and include its
-source. Private, unpublished use has no obligations.
+This template is licensed under [GPL-3.0](LICENSE). If you keep a
+repository built from this template private, the license places no
+obligations on you. If you make that repository public, you must
+license it under GPL-3.0 as well and include its source.

@@ -7,7 +7,7 @@ from it:
 
 1. Clone the template and delete `skills/example-skill/`.
 2. Replace the `{{…}}` placeholders in `.claude-plugin/plugin.json`,
-   `.claude-plugin/marketplace.json`, `AGENTS.md`, `install.sh`,
+   `.claude-plugin/marketplace.json`, `AGENTS.md`,
    `.github/copilot-instructions.md`, and this README:
    - `{{PLUGIN_NAME}}` — the plugin's kebab-case name
    - `{{REPO_NAME}}` — the repository name
@@ -43,22 +43,11 @@ want one-command install, the namespace prefix, and semver releases. Go
 skills-only when the skills are personal or single-purpose and a
 symlink-or-copy install is enough.
 
-### Optional: install script for flat-namespace hosts
-
-`install.sh` copies the skill folders into a host's skills directory,
-prefixing each with the plugin name so generic skill names cannot
-collide with other installed skills:
-
-```bash
-./install.sh ~/.agents/skills                  # Codex
-./install.sh ~/.gemini/config/skills           # Antigravity / Gemini CLI
-./install.sh ~/.agents/skills --force          # refresh existing installs
-```
-
-Delete this script if your skill names are distinctive or you install
-only via the plugin or a whole-plugin symlink — it earns its keep only
-when skills are copied individually into shared flat skills
-directories.
+**Flat-namespace hosts:** if you also target hosts without a plugin
+concept (such as Codex) and your skill names are generic, rename the
+copied folders — and their `SKILL.md` `name:` fields, which must match —
+to `<plugin-name>-<skill-name>` so they cannot collide with other
+installed skills.
 
 ## Skills
 
@@ -109,10 +98,16 @@ git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
 
 ### Antigravity / Gemini CLI
 
-Clone the repository and symlink the plugin root:
+Antigravity supports plugins — install from a local clone:
 
 ```bash
 git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
+agy plugin install ~/path/to/{{REPO_NAME}}
+```
+
+Or symlink the plugin root:
+
+```bash
 ln -sfn ~/path/to/{{REPO_NAME}} ~/.gemini/config/plugins/{{PLUGIN_NAME}}
 ```
 

@@ -119,7 +119,8 @@ Bump both files on every release.
 
 ## License
 
-This template is licensed under [GPL-3.0](LICENSE). If you build a
-plugin or skill repository from this template and make it public, you
-must license that repository under GPL-3.0 as well and include its
-source. Private, unpublished use has no obligations.
+Copyright © 2026 Eugene Teo. This template is licensed under
+[GPL-3.0](LICENSE). If you build a plugin or skill repository from this
+template and make it public, you must license that repository under
+GPL-3.0 as well and include its source. Private, unpublished use has no
+obligations.

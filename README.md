@@ -12,9 +12,9 @@
 
 ## Skills
 
-| Skill | Description | Example invoke |
+| Skill | Source | Use for |
 |---|---|---|
-| `example-skill` | What it covers | `{{PLUGIN_NAME}}:example-skill` |
+| [example-skill](skills/example-skill/SKILL.md) | {{SOURCE_DOCUMENTS}} | What it covers |
 
 ## Prerequisites & Dependencies
 

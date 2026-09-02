@@ -1,0 +1,18 @@
+{
+  "name": "{{REPO_NAME}}",
+  "owner": {
+    "name": "{{AUTHOR_NAME}}"
+  },
+  "metadata": {
+    "description": "{{ONE_SENTENCE_MARKETPLACE_DESCRIPTION}}",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "{{PLUGIN_NAME}}",
+      "description": "{{ONE_SENTENCE_PLUGIN_DESCRIPTION}}",
+      "source": "./",
+      "strict": false
+    }
+  ]
+}

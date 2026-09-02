@@ -7,7 +7,7 @@ from it:
 
 1. Clone the template and delete `skills/example-skill/`.
 2. Replace the `{{…}}` placeholders in `.claude-plugin/plugin.json`,
-   `.claude-plugin/marketplace.json`, `AGENTS.md`,
+   `.claude-plugin/marketplace.json`, `AGENTS.md`, `install.sh`,
    `.github/copilot-instructions.md`, and this README:
    - `{{PLUGIN_NAME}}` — the plugin's kebab-case name
    - `{{REPO_NAME}}` — the repository name
@@ -42,6 +42,23 @@ path:
 want one-command install, the namespace prefix, and semver releases. Go
 skills-only when the skills are personal or single-purpose and a
 symlink-or-copy install is enough.
+
+### Optional: install script for flat-namespace hosts
+
+`install.sh` copies the skill folders into a host's skills directory,
+prefixing each with the plugin name so generic skill names cannot
+collide with other installed skills:
+
+```bash
+./install.sh ~/.agents/skills                  # Codex / Copilot CLI
+./install.sh ~/.gemini/config/skills           # Antigravity / Gemini CLI
+./install.sh ~/.agents/skills --force          # refresh existing installs
+```
+
+Delete this script if your skill names are distinctive or you install
+only via the plugin or a whole-plugin symlink — it earns its keep only
+when skills are copied individually into shared flat skills
+directories.
 
 ## Skills
 

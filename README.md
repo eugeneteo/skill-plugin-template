@@ -10,6 +10,26 @@
 > (`claude plugin validate .` warns about the `{{…}}` placeholders until
 > they are replaced — that is expected.)
 
+### Skills-only variant
+
+To create a repo with standalone skills and **no plugin**, do everything
+above but **delete the `.claude-plugin/` directory**. The skills still
+work via the open Agent Skills standard — you lose the one-command
+plugin install and the `/plugin-name:skill` namespace, and install by
+copying or symlinking skill folders into each agent's discovery path:
+
+| Agent | Personal path | Project path |
+|---|---|---|
+| Claude Code | `~/.claude/skills/<name>/` | `.claude/skills/<name>/` |
+| GitHub Copilot CLI | `~/.copilot/skills/` or `~/.agents/skills/` | `.github/skills/`, `.agents/skills/` |
+| Codex | `~/.agents/skills/` | `$REPO_ROOT/.agents/skills/` |
+| Antigravity / Gemini CLI | `~/.gemini/config/skills/<name>/` | `<workspace-root>/.agents/skills/<name>/` |
+
+**Which shape to choose:** keep `.claude-plugin/` (full plugin) when you
+want one-command install, the namespace prefix, and semver releases;
+go skills-only when the skills are personal or single-purpose and a
+symlink/copy install is enough.
+
 ## Skills
 
 | Skill | Source | Use for |

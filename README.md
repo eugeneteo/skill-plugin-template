@@ -2,7 +2,7 @@
 
 {{ONE_PARAGRAPH_OVERVIEW}}.
 
-> This repository is the **plugin skeleton template**. To create a new
+> This repository is the **skill plugin template**. To create a new
 > plugin from it: clone, replace the `{{…}}` placeholders in
 > `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
 > `AGENTS.md`, `.github/copilot-instructions.md`, and this README, then

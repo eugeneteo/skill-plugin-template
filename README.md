@@ -7,6 +7,8 @@
 > `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
 > `AGENTS.md`, `.github/copilot-instructions.md`, and this README, then
 > drop skills into `skills/`. Delete `skills/example-skill/` when done.
+> (`claude plugin validate .` warns about the `{{…}}` placeholders until
+> they are replaced — that is expected.)
 
 ## Skills
 

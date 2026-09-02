@@ -2,21 +2,34 @@
 
 {{ONE_PARAGRAPH_OVERVIEW}}.
 
-> This repository is the **skill plugin template**. To create a new
-> plugin from it: clone, replace the `{{…}}` placeholders in
-> `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
-> `AGENTS.md`, `.github/copilot-instructions.md`, and this README, then
-> drop skills into `skills/`. Delete `skills/example-skill/` when done.
-> (`claude plugin validate .` warns about the `{{…}}` placeholders until
-> they are replaced — that is expected.)
+This repository is the **skill plugin template**. To create a new plugin
+from it:
 
-### Skills-only variant
+1. Clone the template and delete `skills/example-skill/`.
+2. Replace the `{{…}}` placeholders in `.claude-plugin/plugin.json`,
+   `.claude-plugin/marketplace.json`, `AGENTS.md`,
+   `.github/copilot-instructions.md`, and this README:
+   - `{{PLUGIN_NAME}}` — the plugin's kebab-case name
+   - `{{REPO_NAME}}` — the repository name
+   - `{{GITHUB_OWNER}}` — the GitHub account that hosts the repository
+   - `{{AUTHOR_NAME}}` — the maintainer's name
+   - `{{SOURCE_DOCUMENTS}}` — what the skills are built from
+   - `{{ONE_PARAGRAPH_OVERVIEW}}`, `{{ONE_SENTENCE_PLUGIN_DESCRIPTION}}`,
+     `{{ONE_SENTENCE_MARKETPLACE_DESCRIPTION}}`, `{{WHAT_THIS_SKILL_COVERS}}`,
+     `{{TRIGGER_CONDITIONS}}`, `{{OTHER_TRIGGER}}` — descriptive text
+3. Drop skills into `skills/`.
 
-To create a repo with standalone skills and **no plugin**, do everything
-above but **delete the `.claude-plugin/` directory**. The skills still
-work via the open Agent Skills standard — you lose the one-command
-plugin install and the `/plugin-name:skill` namespace, and install by
-copying or symlinking skill folders into each agent's discovery path:
+`claude plugin validate .` warns about the `{{…}}` placeholders until you
+replace them — that is expected.
+
+## Create a skills-only variant
+
+To create a repository with standalone skills and no plugin, follow the
+steps above but **delete the `.claude-plugin/` directory**. The skills
+still work through the open Agent Skills standard, but you lose the
+one-command plugin install and the `/plugin-name:skill` namespace. To
+install, copy or symlink the skill folders into each agent's discovery
+path:
 
 | Agent | Personal path | Project path |
 |---|---|---|
@@ -26,11 +39,13 @@ copying or symlinking skill folders into each agent's discovery path:
 | Antigravity / Gemini CLI | `~/.gemini/config/skills/<name>/` | `<workspace-root>/.agents/skills/<name>/` |
 
 **Which shape to choose:** keep `.claude-plugin/` (full plugin) when you
-want one-command install, the namespace prefix, and semver releases;
-go skills-only when the skills are personal or single-purpose and a
-symlink/copy install is enough.
+want one-command install, the namespace prefix, and semver releases. Go
+skills-only when the skills are personal or single-purpose and a
+symlink-or-copy install is enough.
 
 ## Skills
+
+The following table lists the plugin's skills. Add one row per skill:
 
 | Skill | Source | Use for |
 |---|---|---|
@@ -38,13 +53,15 @@ symlink/copy install is enough.
 
 ## Prerequisites & Dependencies
 
-- Claude Code (or one of the other supported agents below).
-- MCP servers, runtimes, or external services the skills depend on —
-  list each with its install/add command, or write "None".
+- Claude Code, or one of the other supported agents below.
+- Any MCP servers, runtimes, or external services the skills depend on.
+  List each with its install or add command, or write "None".
 
 ## Installation
 
 ### Claude Code
+
+Install the plugin from the repository's marketplace manifest:
 
 ```bash
 claude plugin marketplace add {{GITHUB_OWNER}}/{{REPO_NAME}}
@@ -53,9 +70,9 @@ claude plugin install {{PLUGIN_NAME}}@{{REPO_NAME}}
 
 ### GitHub Copilot CLI
 
-Clone the repo and point Copilot CLI at it via its instructions file
-(`.github/copilot-instructions.md` is included); skills under `skills/`
-are read as reference material.
+Clone the repository. The `.github/copilot-instructions.md` file gives
+Copilot CLI the plugin context, and Copilot reads the skills under
+`skills/` as reference material:
 
 ```bash
 git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
@@ -63,8 +80,9 @@ git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
 
 ### Codex
 
-Clone the repo — the root `AGENTS.md` gives Codex the plugin context
-automatically; consult `skills/*/SKILL.md` per the catalog above.
+Clone the repository. The root `AGENTS.md` gives Codex the plugin context
+automatically, and Codex consults `skills/*/SKILL.md` per the catalog
+above:
 
 ```bash
 git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
@@ -72,28 +90,29 @@ git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
 
 ### Antigravity / Gemini CLI
 
-Clone the repo and symlink the plugin root:
+Clone the repository and symlink the plugin root:
 
 ```bash
 git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
-ln -s ~/path/to/{{REPO_NAME}} ~/.gemini/config/plugins/{{PLUGIN_NAME}}
+ln -sfn ~/path/to/{{REPO_NAME}} ~/.gemini/config/plugins/{{PLUGIN_NAME}}
 ```
 
 ## Usage Examples
 
-One example prompt per skill.
+Provide one example prompt for each skill.
 
 ## Sources & Keeping Fresh
 
-Optional section — describe `sources/` conventions and how to run
-`refresh/verify-primary.sh`. Delete if not applicable.
+Optional section. Describe your `sources/` conventions and how to run
+`refresh/verify-primary.sh`. Delete this section if not applicable.
 
 ## Rules & Precedence
 
-Optional section — summarize `rules/AGENTS.md`. Delete if not applicable.
+Optional section. Summarize `rules/AGENTS.md`. Delete this section if
+not applicable.
 
 ## Versioning
 
-Versions are semver in `.claude-plugin/plugin.json` and mirrored in the
-`metadata.version` of `.claude-plugin/marketplace.json`. Bump both on
-every release.
+Versions follow semver in `.claude-plugin/plugin.json` and are mirrored
+in the `metadata.version` field of `.claude-plugin/marketplace.json`.
+Bump both files on every release.

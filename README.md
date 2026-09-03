@@ -111,6 +111,8 @@ Or symlink the plugin root:
 ln -sfn ~/path/to/{{REPO_NAME}} ~/.gemini/config/plugins/{{PLUGIN_NAME}}
 ```
 
+The root `GEMINI.md` gives Gemini CLI/Antigravity the plugin context automatically.
+
 ## Usage Examples
 
 Provide one example prompt for each skill.

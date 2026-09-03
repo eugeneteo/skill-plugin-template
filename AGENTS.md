@@ -22,6 +22,8 @@ All commits in this repo follow:
   - Claude Code → `Co-Authored-By: Claude Code <noreply@anthropic.com>`
   - GitHub Copilot CLI →
     `Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>`
+  - Antigravity →
+    `Co-Authored-By: Antigravity <antigravity-cli@google.com>`
   - Any other agent with its own documented convention → use that
     agent's own trailer.
   - Unknown/undocumented agent → omit the trailer rather than guess.

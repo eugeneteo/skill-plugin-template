@@ -139,3 +139,7 @@ This template is licensed under [GPL-3.0](LICENSE). If you keep a
 repository built from this template private, the license places no
 obligations on you. If you make that repository public, you must
 license it under GPL-3.0 as well and include its source.
+
+---
+
+Template created by [@eugeneteo](https://github.com/eugeneteo).

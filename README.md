@@ -35,7 +35,6 @@ path:
 |---|---|---|
 | Claude Code | `~/.claude/skills/<name>/` | `.claude/skills/<name>/` |
 | GitHub Copilot CLI | `~/.copilot/skills/` or `~/.agents/skills/` | `.github/skills/`, `.agents/skills/` |
-| Codex | `~/.agents/skills/` | `$REPO_ROOT/.agents/skills/` |
 | Antigravity / Gemini CLI | `~/.gemini/config/skills/<name>/` | `<workspace-root>/.agents/skills/<name>/` |
 
 **Which shape to choose:** keep `.claude-plugin/` (full plugin) when you
@@ -43,11 +42,11 @@ want one-command install, the namespace prefix, and semver releases. Go
 skills-only when the skills are personal or single-purpose and a
 symlink-or-copy install is enough.
 
-**Flat-namespace hosts:** if you also target hosts without a plugin
-concept (such as Codex) and your skill names are generic, rename the
-copied folders — and their `SKILL.md` `name:` fields, which must match —
-to `<plugin-name>-<skill-name>` so they cannot collide with other
-installed skills.
+**Flat-namespace hosts:** for hosts without a plugin namespace, expand
+the skill names when you copy the folders — rename each folder, and its
+`SKILL.md` `name:` field, which must match, to
+`<plugin-name>-<skill-name>` (for example `rh-learn-search`,
+`ms-learn-runbook`) so they cannot collide with other installed skills.
 
 ## Skills
 
@@ -85,16 +84,6 @@ copilot plugin install {{PLUGIN_NAME}}@{{REPO_NAME}}
 
 When working from a clone, `.github/copilot-instructions.md` gives
 Copilot CLI the plugin context.
-
-### Codex
-
-Clone the repository. The root `AGENTS.md` gives Codex the plugin context
-automatically, and Codex consults `skills/*/SKILL.md` per the catalog
-above:
-
-```bash
-git clone https://github.com/{{GITHUB_OWNER}}/{{REPO_NAME}}.git
-```
 
 ### Antigravity / Gemini CLI
 

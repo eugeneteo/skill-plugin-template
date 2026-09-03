@@ -28,7 +28,7 @@ All commits in this repo follow:
     agent's own trailer.
   - Unknown/undocumented agent → omit the trailer rather than guess.
 
-This root `AGENTS.md` is the shared source of truth for Codex-compatible
-agents. `CLAUDE.md`, `.github/copilot-instructions.md`, and `GEMINI.md`
-each import it via `@AGENTS.md` (or `@../AGENTS.md` from `.github/`) so
-all agent adapters stay in sync automatically.
+This root `AGENTS.md` is the shared source of truth for agents that
+read it natively. `CLAUDE.md`, `.github/copilot-instructions.md`, and
+`GEMINI.md` each import it via `@AGENTS.md` (or `@../AGENTS.md` from
+`.github/`) so all agent adapters stay in sync automatically.

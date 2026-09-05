@@ -45,8 +45,9 @@ symlink-or-copy install is enough.
 **Flat-namespace hosts:** for hosts without a plugin namespace, expand
 the skill names when you copy the folders — rename each folder, and its
 `SKILL.md` `name:` field, which must match, to
-`<plugin-name>-<skill-name>` (for example `rh-learn-search`,
-`ms-learn-runbook`) so they cannot collide with other installed skills.
+`<plugin-name>-<skill-name>` (for example, a plugin named `acme-docs`
+with a skill folder `search/` becomes `acme-docs-search`) so they cannot
+collide with other installed skills.
 
 ## Skills
 

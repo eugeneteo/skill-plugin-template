@@ -62,6 +62,14 @@ The following table lists the plugin's skills. Add one row per skill:
 - Any MCP servers, runtimes, or external services the skills depend on.
   List each with its install or add command, or write "None".
 
+## Shared helpers
+
+If your plugin needs shared fetch/cache/feed infrastructure, vendor it
+from [skills-plumbing](https://github.com/eugeneteo/skills-plumbing):
+run its `tools/vendor.sh` against your repo, commit the resulting
+`lib/` and `shared.lock`, and copy its drift-check workflow so CI
+fails if the vendored copy drifts.
+
 ## Installation
 
 ### Claude Code

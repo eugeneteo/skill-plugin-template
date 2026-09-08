@@ -66,10 +66,9 @@ The following table lists the plugin's skills. Add one row per skill:
 ## Shared helpers
 
 If your plugin needs shared fetch/cache/feed infrastructure, vendor it
-from [skills-plumbing](https://github.com/eugeneteo/skills-plumbing):
-run its `tools/vendor.sh` against your repo, commit the resulting
-`lib/` and `shared.lock`, and copy its drift-check workflow so CI
-fails if the vendored copy drifts.
+from your own shared-helpers repository: run its vendoring script
+against this repo, commit the resulting `lib/` and lockfile, and copy
+its drift-check workflow so CI fails if the vendored copy drifts.
 
 ## Installation
 

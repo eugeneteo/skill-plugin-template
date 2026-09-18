@@ -57,11 +57,37 @@ The following table lists the plugin's skills. Add one row per skill:
 |---|---|---|
 | [example-skill](skills/example-skill/SKILL.md) | {{SOURCE_DOCUMENTS}} | What it covers |
 
+## Scope policy
+
+State what the plugin compiles and what it deliberately tracks but does
+not fully summarize. The rule: listing an adjacent source is never an
+accident, and omitting its summary is never an oversight — each is a
+per-source scope decision recorded here or in the watch list. If the
+domain has an authority hierarchy (what outranks what), summarize it
+here or point to `rules/AGENTS.md`.
+
 ## Prerequisites & Dependencies
 
 - Claude Code, or one of the other supported agents below.
 - Any MCP servers, runtimes, or external services the skills depend on.
   List each with its install or add command, or write "None".
+
+## Plugin Structure
+
+Show the repository layout so readers can navigate without cloning:
+
+```text
+{{REPO_NAME}}/
+├── .claude-plugin/
+│   ├── plugin.json
+│   └── marketplace.json   (single-plugin marketplace index)
+├── rules/
+│   └── AGENTS.md
+├── skills/
+│   └── example-skill/
+├── sources/
+└── refresh/
+```
 
 ## Shared helpers
 
@@ -80,6 +106,10 @@ Install the plugin from the repository's marketplace manifest:
 claude plugin marketplace add {{GITHUB_OWNER}}/{{REPO_NAME}}
 claude plugin install {{PLUGIN_NAME}}@{{REPO_NAME}}
 ```
+
+If the repository built from this template is private, install from the
+local working copy instead — `claude plugin marketplace add
+~/path/to/{{REPO_NAME}}` — and do not add it to any public marketplace.
 
 ### GitHub Copilot CLI
 
@@ -118,17 +148,34 @@ Provide one example prompt for each skill.
 
 Optional section. Describe your `sources/` conventions and how to run
 `refresh/verify-primary.sh`. Delete this section if not applicable.
+Where a claim's freshness matters, carry a dated marker — "re-checked
+YYYY-MM-DD" — on the heading, row, or item it applies to, and re-verify
+the date each time you touch the item.
 
 ## Rules & Precedence
 
 Optional section. Summarize `rules/AGENTS.md`. Delete this section if
 not applicable.
 
+## Watch List & Known Gaps
+
+Optional but recommended for any plugin grounded in sources that change.
+Keep a running list of:
+
+- **Watch** items — known-stale or in-flux sources, with the dated
+  re-check commitment and where to re-check.
+- **Unverified** items — claims resting on secondary sources, marked
+  explicitly so no skill states them as fact.
+- **Verified negatives** — things checked and confirmed not to exist,
+  so they are never chased again.
+
 ## Versioning
 
 Versions follow semver in `.claude-plugin/plugin.json` and are mirrored
 in the `metadata.version` field of `.claude-plugin/marketplace.json`.
-Bump both files on every release.
+Bump both files on every release, and state the current version in this
+section — "(currently X.Y.Z)" — so README/manifest drift is visible at
+a glance.
 
 ## License
 

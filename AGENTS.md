@@ -7,6 +7,15 @@ This repository is a Claude Code plugin exposing skills under `skills/`.
 - Skill frontmatter (`name`, `description`) in each `skills/*/SKILL.md`
   is the trigger contract — invoke the matching skill for its topics.
 
+## Skill content shape
+
+Each `SKILL.md` is a lean router (body ≤5 KB): frontmatter, a
+how-to-use line, decision-rule one-liners, and a what-lives-where map.
+`description:` stays ≤400 chars — trigger clause plus instrument/topic
+names, no dates. Detail lives in `chapters/`/`references/`/
+`cheatsheet.md`; each fact has exactly one home; verification lines are
+one per unique URL. Do not grow `SKILL.md` instead of a supporting file.
+
 ## Git commit conventions
 
 All commits in this repo follow:

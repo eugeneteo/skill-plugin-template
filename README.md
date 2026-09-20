@@ -57,6 +57,28 @@ The following table lists the plugin's skills. Add one row per skill:
 |---|---|---|
 | [example-skill](skills/example-skill/SKILL.md) | {{SOURCE_DOCUMENTS}} | What it covers |
 
+## Skill content shape
+
+Every `SKILL.md` in this repo follows the **router pattern** — the entry
+file routes, it does not carry the detail:
+
+- **Lean router, body ≤5 KB**: frontmatter, a how-to-use/invocation
+  line, decision-rule one-liners, and a "what lives where" map. Nothing
+  else.
+- **`description:` ≤400 chars**: the trigger clause ("Use when …") plus
+  the instrument/topic names a user would name in a prompt. No dates —
+  dates live in the body or `chapters/`, where they can be re-verified.
+- **Detail lives in supporting files**: `chapters/`, `references/`,
+  `cheatsheet.md`, `glossary.md`, `patterns.md` — loaded on demand, so
+  their size never costs always-on tokens.
+- **Single source of truth per fact**: one fact, one home. The router
+  summarizes in one line and points; the supporting file owns the full
+  statement, table, and citation.
+- **Verification lines: one per unique URL** — collapse repeated
+  citation chains; keep the date and marker verbatim on that one line.
+
+`skills/example-skill/SKILL.md` exemplifies the shape.
+
 ## Scope policy
 
 State what the plugin compiles and what it deliberately tracks but does

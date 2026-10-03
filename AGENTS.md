@@ -1,6 +1,8 @@
 # {{PLUGIN_NAME}}
 
-This repository is a Claude Code plugin exposing skills under `skills/`.
+This repository exposes skills under `skills/` — as a Claude Code
+plugin when `.claude-plugin/` is present, otherwise as standalone
+skills (the default for single-skill repos).
 
 - Skill catalog and usage: see `README.md` (§ Skills).
 - Behavioral rules that bind when any skill is active: `rules/AGENTS.md`.

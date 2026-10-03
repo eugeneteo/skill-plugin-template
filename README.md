@@ -19,6 +19,10 @@ from it:
      `{{TRIGGER_CONDITIONS}}`, `{{OTHER_TRIGGER}}` — descriptive text
 3. Add your skills to the `skills/` directory.
 
+If the repo will hold **only one skill**, skip the plugin entirely —
+see **Create a skills-only variant** below. A plugin needs a reason
+(two or more skills, or a namespace/install story) to exist.
+
 `claude plugin validate .` warns about the `{{…}}` placeholders until you
 replace them — that is expected.
 
@@ -37,10 +41,12 @@ path:
 | GitHub Copilot CLI | `~/.copilot/skills/` or `~/.agents/skills/` | `.github/skills/`, `.agents/skills/` |
 | Antigravity / Gemini CLI | `~/.gemini/config/skills/<name>/` | `<workspace-root>/.agents/skills/<name>/` |
 
-**Which shape to choose:** keep `.claude-plugin/` (full plugin) when you
-want one-command install, the namespace prefix, and semver releases. Go
-skills-only when the skills are personal or single-purpose and a
-symlink-or-copy install is enough.
+**Which shape to choose:** decide by skill count first. **One skill ⇒
+skills-only** — a plugin wrapper around a single skill adds nothing but
+boilerplate (a second name to track, `plugin:skill` addressing for one
+entry), so delete `.claude-plugin/`. Reach for the full plugin only when
+the repo ships **two or more skills** that benefit from one-command
+install, a shared namespace prefix, and semver releases.
 
 **Flat-namespace hosts:** for hosts without a plugin namespace, expand
 the skill names when you copy the folders — rename each folder, and its

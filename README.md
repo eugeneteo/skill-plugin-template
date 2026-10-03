@@ -5,7 +5,9 @@
 This repository is the **skill plugin template**. To create a new plugin
 from it:
 
-1. Clone the template and delete `skills/example-skill/`.
+1. Clone the template and delete `skills/example-skill/` — and delete
+   `.claude-plugin/` too if the repo will hold only one skill (see
+   below).
 2. Replace the `{{…}}` placeholders in `.claude-plugin/plugin.json`,
    `.claude-plugin/marketplace.json`, `AGENTS.md`,
    `.github/copilot-instructions.md`, and this README:
@@ -20,13 +22,13 @@ from it:
 3. Add your skills to the `skills/` directory.
 
 If the repo will hold **only one skill**, skip the plugin entirely —
-see **Create a skills-only variant** below. A plugin needs a reason
-(two or more skills, or a namespace/install story) to exist.
+see **Skills-only shape (single-skill repos)** below. A plugin needs
+a reason (two or more skills, or a namespace/install story) to exist.
 
 `claude plugin validate .` warns about the `{{…}}` placeholders until you
 replace them — that is expected.
 
-## Create a skills-only variant
+## Skills-only shape (single-skill repos)
 
 To create a repository with standalone skills and no plugin, follow the
 steps above but **delete the `.claude-plugin/` directory**. The skills
@@ -100,7 +102,7 @@ here or point to `rules/AGENTS.md`.
 - Any MCP servers, runtimes, or external services the skills depend on.
   List each with its install or add command, or write "None".
 
-## Plugin Structure
+## Repository structure
 
 Show the repository layout so readers can navigate without cloning:
 
@@ -117,6 +119,8 @@ Show the repository layout so readers can navigate without cloning:
 └── refresh/
 ```
 
+In a skills-only repo, `.claude-plugin/` is absent.
+
 ## Shared helpers
 
 If your plugin needs shared fetch/cache/feed infrastructure, vendor it
@@ -125,6 +129,11 @@ against this repo, commit the resulting `lib/` and lockfile, and copy
 its drift-check workflow so CI fails if the vendored copy drifts.
 
 ## Installation
+
+The commands in this section are the plugin-shape installs used by
+multi-skill repos. A skills-only repo instead copies or symlinks the
+skill folders into each agent's discovery path, per the table in the
+[skills-only shape](#skills-only-shape-single-skill-repos) section.
 
 ### Claude Code
 
@@ -198,6 +207,9 @@ Keep a running list of:
   so they are never chased again.
 
 ## Versioning
+
+Applies only when `.claude-plugin/` exists. In a skills-only repo,
+delete this section.
 
 Versions follow semver in `.claude-plugin/plugin.json` and are mirrored
 in the `metadata.version` field of `.claude-plugin/marketplace.json`.

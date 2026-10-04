@@ -84,6 +84,9 @@ file routes, it does not carry the detail:
   statement, table, and citation.
 - **Verification lines: one per unique URL** — collapse repeated
   citation chains; keep the date and marker verbatim on that one line.
+- **Quote typography is a fidelity contract**: quoted text is verbatim
+  from the original source with a cite (page cite when paginated);
+  the skill's own coined heuristics wear italics, never quotes.
 
 `skills/example-skill/SKILL.md` exemplifies the shape.
 

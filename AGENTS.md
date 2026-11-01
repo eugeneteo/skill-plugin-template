@@ -39,6 +39,26 @@ All commits in this repo follow:
     agent's own trailer.
   - Unknown/undocumented agent → omit the trailer rather than guess.
 
+## Source chronology and precedence
+
+Repos built from multiple source documents keep a chronology file
+(e.g. `DOC-CHRONOLOGY.md` at the repo root) recording each source's
+publication year, and **declare a precedence direction** — this is
+domain-dependent and must be stated explicitly:
+
+- **Newest-wins** for methods, standards, and technical guidance:
+  when sources disagree, the later-published source supersedes the
+  earlier; skills flag superseded content (cite both), never merge
+  definitions.
+- **Oldest-wins** for classical texts and historical sources: the
+  earliest edition is the authoritative record; later editions are
+  interpretations and are cited as such, never silently substituted.
+
+Mechanics regardless of direction: verify years from title/copyright
+pages at build time; record per-document offsets and cite tags; when
+two sources diverge, present the divergence explicitly with both
+cites.
+
 This root `AGENTS.md` is the shared source of truth for agents that
 read it natively. `CLAUDE.md`, `.github/copilot-instructions.md`, and
 `GEMINI.md` each import it via `@AGENTS.md` (or `@../AGENTS.md` from

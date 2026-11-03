@@ -18,6 +18,12 @@ names, no dates. Detail lives in `chapters/`/`references/`/
 `cheatsheet.md`; each fact has exactly one home; verification lines are
 one per unique URL. Do not grow `SKILL.md` instead of a supporting file.
 
+## Corpus & Alternative Index Maintenance
+
+Whenever new source documents, extracts (`extracts/`), or regulatory guidance chapters are added or substantially revised in this repository:
+- Rerun the alternative index prompt (`/Users/xz/code/skills-plumbing/prompts/alt-index.md`) to regenerate `alt-index/keywords.md`, `alt-index/ideas.md`, `alt-index/stories.md`, and `alt-index/similar.md` (via `simindex.py`).
+- Maintain index currency so that cross-document synthesis and page-anchored locators remain synchronized with the underlying extracts.
+
 ## Git commit conventions
 
 All commits in this repo follow:

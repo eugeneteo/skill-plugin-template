@@ -45,6 +45,23 @@ All commits in this repo follow:
     agent's own trailer.
   - Unknown/undocumented agent → omit the trailer rather than guess.
 
+## Fleet registry
+
+This repo is catalogued in the fleet registry at
+`~/code/skills-registry` (PRIVATE — never make it public). At the end
+of every work session that changes this repo's skills, sources, or
+reports — **before committing**:
+
+1. Run
+   `~/code/skills-plumbing/tools/registry-update.sh <this-repo-dirname> "<one-line status>"`
+   to set the `Last status:` line in `registry/<repo>.md`.
+2. Update this repo's row in `registry` repo's `CATALOG.md`
+   (status / last commit / notes; folio coverage if the corpus changed).
+3. Commit and push `skills-registry`.
+
+Local-only repos (no GitHub remote) are not catalogued — see
+`~/code/LOCAL-ONLY-REPOS.md`.
+
 ## Source chronology and precedence
 
 Repos built from multiple source documents keep a chronology file

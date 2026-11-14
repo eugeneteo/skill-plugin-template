@@ -4,9 +4,14 @@ Behavioral rules that apply whenever any skill in this plugin is active.
 Delete this file if the plugin has no cross-skill rules.
 
 - State the precedence order between skills, if one exists.
+- **Canonical corpus layout**:
+  - `sources/` (or `sources/<topic>/`): Raw upstream source documents (PDF, DOCX, HTML, MD).
+  - `extracts/` (or `extracts/<topic>/`): Folio extracts with anchors (`## [PDF p. N]` or `## [section N]`). Extracts MUST always live at the repository root `extracts/` (or `extracts/<topic>/` mirroring `sources/<topic>/`); never nest `extracts/` inside `sources/`.
+  - `coverage/` (or `coverage/<topic>/`): Passage coverage files concluding with `Coverage:` footers.
+  - `alt-index/`: Alternate index (`ideas.md`, `keywords.md`, `stories.md`).
 - **Folio by default (corpus ingestion & citation)**:
   - All source document ingestion (`sources/` -> `extracts/`) must default to the
-    **`folio`** skill (`python3 <path-to-folio>/scripts/folio_extract.py --sources sources/`).
+    **`folio`** skill (`python3 <path-to-folio>/scripts/folio_extract.py --sources sources/ --out extracts/`).
     Extracts must strictly follow folio standards (`## [PDF p. N]` anchors and
     `<!-- Provenance ... -->` headers).
   - Every source added to `sources/` must be paired with its rendered folio extract in

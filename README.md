@@ -8,7 +8,7 @@ from it:
 1. Clone the template and delete `skills/example-skill/` — and delete
    `.claude-plugin/` too if the repo will hold only one skill (see
    below).
-2. Replace the `{{…}}` placeholders in `.claude-plugin/plugin.json`,
+2. Replace the `{{…}}` placeholders in `plugin.json`, `.claude-plugin/plugin.json`,
    `.claude-plugin/marketplace.json`, `AGENTS.md`,
    `.github/copilot-instructions.md`, and this README:
    - `{{PLUGIN_NAME}}` — the plugin's kebab-case name
@@ -111,8 +111,9 @@ Show the repository layout so readers can navigate without cloning:
 
 ```text
 {{REPO_NAME}}/
+├── plugin.json            (root manifest for Antigravity & native discovery)
 ├── .claude-plugin/
-│   ├── plugin.json
+│   ├── plugin.json        (Claude Code plugin manifest)
 │   └── marketplace.json   (single-plugin marketplace index)
 ├── rules/
 │   └── AGENTS.md
@@ -122,7 +123,7 @@ Show the repository layout so readers can navigate without cloning:
 └── refresh/
 ```
 
-In a skills-only repo, `.claude-plugin/` is absent.
+In a skills-only repo, `plugin.json` and `.claude-plugin/` are absent.
 
 ## Shared helpers
 
@@ -214,11 +215,11 @@ Keep a running list of:
 Applies only when `.claude-plugin/` exists. In a skills-only repo,
 delete this section.
 
-Versions follow semver in `.claude-plugin/plugin.json` and are mirrored
+Versions follow semver in `plugin.json` and `.claude-plugin/plugin.json` and are mirrored
 in the `metadata.version` field of `.claude-plugin/marketplace.json`.
-Bump both files on every release, and state the current version in this
-section — "(currently X.Y.Z)" — so README/manifest drift is visible at
-a glance.
+Keep `plugin.json` and `.claude-plugin/plugin.json` synchronized. Bump all files on every
+release, and state the current version in this section — "(currently X.Y.Z)" — so
+README/manifest drift is visible at a glance.
 
 ## License
 

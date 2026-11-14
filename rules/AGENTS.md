@@ -4,6 +4,13 @@ Behavioral rules that apply whenever any skill in this plugin is active.
 Delete this file if the plugin has no cross-skill rules.
 
 - State the precedence order between skills, if one exists.
+- **Folio by default (corpus extraction & citation)**:
+  - All source document ingestion (`sources/` -> `extracts/`) must default to the
+    **`folio`** skill (`python3 <path-to-folio>/scripts/folio_extract.py --sources sources/`).
+    Extracts must strictly follow folio standards (`## [PDF p. N]` anchors and
+    `<!-- Provenance ... -->` headers).
+  - All page-cited quote verification and locator checking must use the **`folio`**
+    skill (`folio_cite.py find / page / list`) as the normative citation interface.
 - **Two-stage retrieval and index funnel** (when `alt-index/` is present):
   - **Stage 1 (Triage via index)**: Query `alt-index/` first (`ideas.md`,
     `keywords.md`, `stories.md`) to rapidly locate relevant through-lines,

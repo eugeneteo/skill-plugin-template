@@ -21,6 +21,7 @@ one per unique URL. Do not grow `SKILL.md` instead of a supporting file.
 ## Corpus & Alternative Index Maintenance
 
 Whenever new source documents, extracts (`extracts/`), or regulatory guidance chapters are added or substantially revised in this repository:
+- All source documents in `sources/` must be ingested via the **`folio`** skill by default (`python3 <path-to-folio>/scripts/folio_extract.py --sources sources/`), ensuring 100% passage coverage with zero gaps.
 - Rerun the alternative index prompt (`/Users/xz/code/skills-plumbing/prompts/alt-index.md`) to regenerate `alt-index/keywords.md`, `alt-index/ideas.md`, `alt-index/stories.md`, and `alt-index/similar.md` (via `simindex.py`).
 - Maintain index currency so that cross-document synthesis and page-anchored locators remain synchronized with the underlying extracts.
 

@@ -18,6 +18,26 @@ names, no dates. Detail lives in `chapters/`/`references/`/
 `cheatsheet.md`; each fact has exactly one home; verification lines are
 one per unique URL. Do not grow `SKILL.md` instead of a supporting file.
 
+
+## Source naming convention
+
+Primary sources in `sources/` are strictly named `YYYYMMDD - Title.ext`:
+
+- `YYYYMMDD` is the document's own date (issue, effective, or publication date),
+  or the capture date for a web-page snapshot. Where a document is undated, use
+  `YYYYMM00` from its best-evidence date and flag it as approximate in the inventory.
+- `.pdf` for downloaded documents, `.md` for page captures and text captures
+  where no PDF was reachable, `.html` for saved raw pages, `.xlsx` for
+  spreadsheet deliverables.
+- Suffixes in parentheses mark provenance and status: `(page)`,
+  `(page snapshot)`, `(page capture)`, `(public capture)`,
+  `(public portal capture)`, `(narrative capture)` for web captures;
+  `(informal consolidation, SSO)`, `(SSO capture)`, `(SSO print view, full text)`,
+  `(Acts Supp …, SSO)`, `(Bill …, SSO Bills Supplement)` for statutory materials;
+  `(draft)` / `(draft v1.0)` for unpublished drafts, `(consultation)` for
+  consultation-stage material, and `(press release)` for media releases.
+- No original loose download names (e.g. `download (1).pdf`, `temp.html`).
+
 ## Corpus & Alternative Index Maintenance
 
 Whenever new source documents, extracts (`extracts/`), or regulatory guidance chapters are added or substantially revised in this repository:

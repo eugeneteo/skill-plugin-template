@@ -10,6 +10,14 @@ Delete this file if the plugin has no cross-skill rules.
   - `coverage/` (or `coverage/<topic>/`): Passage coverage files concluding with `Coverage:` footers.
   - `alt-index/`: Alternate index (`ideas.md`, `keywords.md`, `stories.md`).
 - **Folio by default (corpus ingestion & citation)**:
+  - For a webpage source, first retain a faithful browser-rendered PDF of
+    the fully loaded original page in `sources/`, then extract the full PDF
+    with Folio into `extracts/`. Capture relevant tabs and detail panels.
+    A summary or Markdown-generated PDF does not qualify.
+  - Record original/final URLs, capture time, render method and PDF hash.
+    Validate rendered pages and every extraction page. Label webpage PDFs
+    distinctly from issuer PDFs; cite their derived snapshot pagination.
+    Missing or blocked content must remain explicitly incomplete.
   - All source document ingestion (`sources/` -> `extracts/`) must default to the
     **`folio`** skill (`python3 <path-to-folio>/scripts/folio_extract.py --sources sources/ --out extracts/`).
     Extracts must strictly follow folio standards (`## [PDF p. N]` anchors and

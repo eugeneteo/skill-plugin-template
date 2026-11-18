@@ -125,6 +125,16 @@ Show the repository layout so readers can navigate without cloning:
 
 In a skills-only repo, `plugin.json` and `.claude-plugin/` are absent.
 
+## Primary webpage sources
+
+Archive the fully loaded original webpage as a faithful browser-rendered
+PDF before extracting it with **Folio**. Retain both the PDF in `sources/`
+and the full page-anchored extract in `extracts/`. Capture relevant tabs
+and detail panels; check that the PDF and extraction contain the full
+substantive content. Summaries and Markdown-generated PDFs do not qualify.
+Record URLs, capture time, render method and PDF hash. Mark incomplete
+captures explicitly. See `AGENTS.md` for naming and citation rules.
+
 ## Shared helpers
 
 If your plugin needs shared fetch/cache/feed infrastructure, vendor it

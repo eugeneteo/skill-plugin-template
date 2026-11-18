@@ -26,9 +26,9 @@ Primary sources in `sources/` are strictly named `YYYYMMDD - Title.ext`:
 - `YYYYMMDD` is the document's own date (issue, effective, or publication date),
   or the capture date for a web-page snapshot. Where a document is undated, use
   `YYYYMM00` from its best-evidence date and flag it as approximate in the inventory.
-- `.pdf` for downloaded documents, `.md` for page captures and text captures
-  where no PDF was reachable, `.html` for saved raw pages, `.xlsx` for
-  spreadsheet deliverables.
+- `.pdf` for original documents and browser-rendered webpage snapshots,
+  distinguished by a `(webpage PDF)` suffix. `.html` and `.md` may supplement
+  snapshots, not replace them. `.xlsx` is for spreadsheet deliverables.
 - Suffixes in parentheses mark provenance and status: `(page)`,
   `(page snapshot)`, `(page capture)`, `(public capture)`,
   `(public portal capture)`, `(narrative capture)` for web captures;
@@ -37,6 +37,23 @@ Primary sources in `sources/` are strictly named `YYYYMMDD - Title.ext`:
   `(draft)` / `(draft v1.0)` for unpublished drafts, `(consultation)` for
   consultation-stage material, and `(press release)` for media releases.
 - No original loose download names (e.g. `download (1).pdf`, `temp.html`).
+
+## Webpage source capture
+
+For a primary source published as a webpage, retain a faithful PDF of the
+fully loaded original webpage in `sources/`, then use **Folio** to create
+its full page-anchored extraction in `extracts/`. A summary, rewritten
+document or Markdown-generated PDF is not a primary-source snapshot.
+Capture all relevant tabs, expanded content and detail panels. Validate
+the rendered pages and extraction for missing content, blank tables,
+clipping and unloaded sections.
+
+Record original/final URLs, capture time, render method and PDF SHA-256.
+Use the capture date in the filename and preserve the publication date
+separately where verified. Cite the snapshot's derived PDF pages, not
+invented issuer pagination. Retain original issuer PDFs separately.
+Blocked or incomplete capture/extraction remains an explicit gap, never
+a complete source record. See `rules/AGENTS.md`.
 
 ## Corpus & Alternative Index Maintenance
 

@@ -90,6 +90,12 @@ file routes, it does not carry the detail:
 
 `skills/example-skill/SKILL.md` exemplifies the shape.
 
+## Work tracking & docs currency
+
+No `TODO.md` — work is tracked as GitHub issues and lands as PRs or
+commits; every content change updates all relevant `.md` files in the
+same change (see `rules/AGENTS.md`).
+
 ## Scope policy
 
 State what the plugin compiles and what it deliberately tracks but does

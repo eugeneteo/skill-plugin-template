@@ -68,6 +68,13 @@ Whenever new source documents, extracts (`extracts/`), or regulatory guidance ch
 - Rerun the alternative index prompt (`/Users/xz/code/skills-plumbing/prompts/alt-index.md`) to regenerate `alt-index/keywords.md`, `alt-index/ideas.md`, `alt-index/stories.md`, and `alt-index/similar.md` (via `simindex.py`).
 - Maintain index currency so that cross-document synthesis and page-anchored locators remain synchronized with the underlying extracts.
 
+## Work tracking & docs currency
+
+No `TODO.md` — actionable work lives as GitHub issues; changes land as
+PRs or commits. When changing anything, update every relevant `.md`
+(README, AGENTS, rules, SKILL descriptions) in the same change. See
+`rules/AGENTS.md`.
+
 ## Git commit conventions
 
 All commits in this repo follow:

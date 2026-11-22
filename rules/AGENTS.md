@@ -49,4 +49,14 @@ Delete this file if the plugin has no cross-skill rules.
   heuristics and coined phrases wear italics, never quotation marks.
   Never fix a quote against its source by editing the quote; correct
   it to the source text, never the reverse.
+- **Work tracking**: do not use `TODO.md`. Actionable work is filed as
+  GitHub issues on this repo (title ≤70 chars; body carries background,
+  evidence, and cross-references). In-flight changes ship as PRs or
+  commits — never parked in a TODO list. Docs that describe scope or
+  status (`README.md`, `AGENTS.md`) stay current instead of
+  accumulating TODO sections.
+- **Holistic documentation updates**: when making any change in a repo,
+  update ALL relevant `.md` files in the same change — `README.md`,
+  `AGENTS.md`, `rules/AGENTS.md`, skill `SKILL.md` descriptions, docs —
+  so nothing goes stale after a code or content change.
 - Keep rules short; deep knowledge belongs in skills.

@@ -3,3 +3,6 @@
 .work/
 node_modules/
 *.log
+extracts/.ocr/
+extracts/.rendered/
+extracts/.wrapped/

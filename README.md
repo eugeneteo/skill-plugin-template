@@ -120,6 +120,7 @@ Show the repository layout so readers can navigate without cloning:
 ├── skills/
 │   └── example-skill/
 ├── sources/
+├── extracts/
 └── refresh/
 ```
 
@@ -134,6 +135,13 @@ and detail panels; check that the PDF and extraction contain the full
 substantive content. Summaries and Markdown-generated PDFs do not qualify.
 Record URLs, capture time, render method and PDF hash. Mark incomplete
 captures explicitly. See `AGENTS.md` for naming and citation rules.
+
+`extracts/` is committed; only its scratch dirs (`.ocr/`, `.rendered/`,
+`.wrapped/`) and paths from licensed sources are ignored — carve-outs are
+path-specific with a naming `.gitignore` comment. Each extract carries an
+overlay header (`overlay base:` / `unique-to:`) and per-page overlay
+comments; cite the base slug for carried-over facts, the source's own
+slug for facts unique to it. See `rules/AGENTS.md`.
 
 ## Shared helpers
 

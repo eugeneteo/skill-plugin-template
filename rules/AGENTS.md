@@ -6,7 +6,9 @@ Delete this file if the plugin has no cross-skill rules.
 - State the precedence order between skills, if one exists.
 - **Canonical corpus layout**:
   - `sources/` (or `sources/<topic>/`): Raw upstream source documents (PDF, DOCX, HTML, MD).
-  - `extracts/` (or `extracts/<topic>/`): Folio extracts with anchors (`## [PDF p. N]` or `## [section N]`). Extracts MUST always live at the repository root `extracts/` (or `extracts/<topic>/` mirroring `sources/<topic>/`); never nest `extracts/` inside `sources/`.
+  - `extracts/` (or `extracts/<topic>/`): Folio extracts with anchors (`## [PDF p. N]` or `## [section N]`). Extracts MUST always live at the repository root `extracts/` (or `extracts/<topic>/` mirroring `sources/<topic>/`); never nest `extracts/` inside `sources/`. Extracts are committed deliverables: ignore only the scratch dirs (`extracts/.ocr/`, `extracts/.rendered/`, `extracts/.wrapped/`) and extract paths derived from copyrighted/licensed/paid sources.
+  - **Licensed-source carve-outs are path-specific, never repo-wide** (unless every extract in the repo derives from licensed works). Each carve-out needs an explicit `.gitignore` comment naming the licensed work (e.g. Gartner, SID guides, paid-book corpus).
+  - **Overlay provenance**: every extract carries an overlay header block (`overlay base:` / `unique-to:`) produced by `folio_overlay.py --sources sources/`, plus per-page `<!-- overlay: shared with <base-slug> p. N -->` comments on pages sharing verbatim text with another corpus source. Extraction order: the oldest source is extracted first and becomes the overlay base. Skills cite the base slug when a fact is carried over from it, and the source's own slug when the fact is unique to it.
   - `coverage/` (or `coverage/<topic>/`): Passage coverage files concluding with `Coverage:` footers.
   - `alt-index/`: Alternate index (`ideas.md`, `keywords.md`, `stories.md`).
 - **Folio by default (corpus ingestion & citation)**:

@@ -55,6 +55,12 @@ invented issuer pagination. Retain original issuer PDFs separately.
 Blocked or incomplete capture/extraction remains an explicit gap, never
 a complete source record. See `rules/AGENTS.md`.
 
+`extracts/` is committed; ignore only its scratch dirs and licensed-source
+paths (path-specific carve-outs with a naming `.gitignore` comment). Each
+extract carries overlay provenance (`overlay base:` / `unique-to:` header
+plus per-page overlay comments); cite the base slug for carried-over
+facts, the source's own slug for unique facts. See `rules/AGENTS.md`.
+
 ## Corpus & Alternative Index Maintenance
 
 Whenever new source documents, extracts (`extracts/`), or regulatory guidance chapters are added or substantially revised in this repository:

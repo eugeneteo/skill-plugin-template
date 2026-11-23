@@ -43,6 +43,18 @@ Delete this file if the plugin has no cross-skill rules.
   - **Grounding contract**: Never cite `alt-index/` itself as primary authority.
     All claims and quotes must be grounded in and cited to the underlying source
     document, statutory rule, or folio page.
+  - **Exhaustive Alt-Index Generation Contract**:
+    When creating or updating `alt-index/`, agents must NEVER write superficial
+    summaries or token sample rows:
+    1. `keywords.md`: Systematically mined across all extracts with zero singletons
+       (every term must have $\ge 2$ distinct locators).
+    2. `ideas.md`: Must cover all primary thematic domains with Popova-style
+       hooks (concise synthesis, never copy-pasted source text).
+    3. `stories.md`: Must exhaustively capture all formal Case Studies, Case in
+       Point features, and named enterprise scenarios present in the text (both
+       commercial books and research notes).
+    4. Validation: Must pass `check_alt_index.py` with zero singletons and zero
+       unresolved locators.
 - Quote typography is a fidelity contract: text inside quotation
   marks is verbatim from an original source and carries a cite
   (page cite when the source is paginated). The skill's own named
